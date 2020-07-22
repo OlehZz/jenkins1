@@ -16,7 +16,7 @@ pipeline {
 	//			}
 	//		}	
                 echo 'Copy...'
-		sh 'bash /home/jenkins/copy.sh'
+		bash /home/jenkins/copy.sh
 		echo 'Building..'
 		sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
