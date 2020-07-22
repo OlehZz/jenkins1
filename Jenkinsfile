@@ -15,7 +15,9 @@ pipeline {
         //			additionalBuildArgs '-t footgo_build' 
 	//			}
 	//		}	
-                echo 'Building..'
+                echo 'Copy...'
+		sh label: '', script: 'copy.sh'
+		echo 'Building..'
 		sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
