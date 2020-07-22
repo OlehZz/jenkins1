@@ -16,7 +16,7 @@ pipeline {
 	//			}
 	//		}	
                 echo 'Copy...'
-		bash /home/jenkins/copy.sh
+		sh label: '', script: '/home/vagrant/copy.sh'
 		echo 'Building..'
 		sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
