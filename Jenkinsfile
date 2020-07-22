@@ -9,13 +9,14 @@ pipeline {
 	}
         stage('Build') {
             steps {
-                agent {
-    		 	 dockerfile {
-				filename 'Dockerfile'
-        			additionalBuildArgs '-t footgo_build' 
-				}
-			}	
+             //   agent {
+    	//	 	 dockerfile {
+	//			filename 'Dockerfile'
+        //			additionalBuildArgs '-t footgo_build' 
+	//			}
+	//		}	
                 echo 'Building..'
+		sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
         stage('Test') {
