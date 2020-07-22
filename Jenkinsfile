@@ -10,8 +10,9 @@ pipeline {
         stage('Build') {
             steps {
                 agent {
-    		  { dockerfile true {
-        additionalBuildArgs '-t footgo_build' }
+    		  { dockerfile {
+			filename 'Dockerfile'
+        		additionalBuildArgs '-t footgo_build' }
    		  }	
 		}
                 echo 'Building..'
