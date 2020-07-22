@@ -16,7 +16,7 @@ pipeline {
 	//			}
 	//		}	
                 echo 'Copy...'
-		sh label: '', script: 'copy.sh'
+		cp /var/lib/jenkins/workspace/'footgo 1'/src/main/resources/application.properties.example /var/lib/jenkins/workspace/'footgo 1'/src/main/resources/application.properties
 		echo 'Building..'
 		sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
