@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     stages {
-	stage('checkout SCM' ) {
-		git branch: 'release/1.0.0', url: 'https://github.com/WiseHands/FootGo.git'
+	stage('checkout SCM') {
+	   git branch: 'release/1.0.0', url: 'https://github.com/WiseHands/FootGo.git'
 	}
         stage('Build') {
             steps {
