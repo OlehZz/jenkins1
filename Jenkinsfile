@@ -3,7 +3,9 @@ pipeline {
 
     stages {
 	stage('checkout SCM') {
-	   git branch: 'release/1.0.0', url: 'https://github.com/WiseHands/FootGo.git'
+		steps {
+	           git branch: 'release/1.0.0', url: 'https://github.com/WiseHands/FootGo.git'
+		}
 	}
         stage('Build') {
             steps {
